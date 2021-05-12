@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <title>แบบประเมิน</title>
+  <style media="screen">
+    body {
+      font-family: 'Itim', cursive;
+
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container border">
+    <!-- Content here -->
+    <img src="/static/img_web/1.jpg" class="img-fluid" alt="Responsive image">
+    <form class="p-2" action="/checkst5" method="POST">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+          <h1 class="display-5">แบบประเมินความเครียด (ST- 5)</h1>
+          <p class="lead">อาการหรือความรู้สึกที่เกิดในระยะ 2 - 4 สัปดาห์</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2> 1. มีปัญหาการนอน นอนไม่หลับหรือนอนมาก </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 1');" required> เป็นน้อยมากหรือแทบไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="1"> เป็นบางครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="2"> เป็นบ่อยครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="3"> เป็นประจำ </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 2. มีสมาธิน้อยลง </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 2');" required> เป็นน้อยมากหรือแทบไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="1"> เป็นบางครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="2"> เป็นบ่อยครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="3"> เป็นประจำ </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 3. หงุดหงิด / กระวนกระวาย / ว้าวุ้นใจ </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 3');" required> เป็นน้อยมากหรือแทบไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="1"> เป็นบางครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="2"> เป็นบ่อยครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="3"> เป็นประจำ </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 4. รู้สึกเบื่อ เซ็ง </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 4');" required> เป็นน้อยมากหรือแทบไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="1"> เป็นบางครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="2"> เป็นบ่อยครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="3"> เป็นประจำ </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 5. ไม่อยากพบปะผู้คน </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 5');" required> เป็นน้อยมากหรือแทบไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="1"> เป็นบางครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="2"> เป็นบ่อยครั้ง </input></h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="3"> เป็นประจำ </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <input id="userId" type="hidden" name="userId" value="">
+      <button type="submit" class="btn btn-primary">ส่งคำตอบ</button>
+      <!--  -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <h2> แบบประเมินความเครียด 5 ข้อ </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> • 0 -4 คะแนน เครียดน้อย <br>
+              • 5 - 7 คะแนน เครียดปานกลาง <br>
+              • 8 - 9 คะแนน เครียดมาก <br>
+              • 10 - 15 คะแนน เครียดมากที่สุด <br>
+              • ระดับเครียดมากขึ้นไป ถือว่ามีความเสี่ยง <br>
+            </h2>
+          </li>
+        </ul>
+      </div> <br>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/static/bootstrap/js/jquery.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="/static/bootstrap/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("userId").value = profile.userId;
+    }
+    async function main() {
+      await liff.init({
+        liffId: "1654982439-PGQy8pvw"
+      })
+      getUserProfile()
+    }
+    main()
+  </script>
+</body>
+
+</html>

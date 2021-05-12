@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
+    <title>เตือนความจำ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style media="screen">
+    body {
+      font-family: 'Itim', cursive;
+
+    }
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container border">
+    <!-- Content here -->
+    <img src="/static/img_web/1.jpg" class="img-fluid" alt="Responsive image">
+    <form class="p-2" action="/checkreminder" method="POST">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>บันทึกเตือนความจำ</h1>
+            </div>
+            <ul class="list-group list-group-flush">
+                {%if service_1 == 1%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_1" value="1" checked> ไปตามนัดพบแพทย์ </h2>
+                </li>
+                {%else%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_1" value="1" > ไปตามนัดพบแพทย์ </h2>
+                </li>
+                {%endif%}
+                {%if service_2 == 1%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_2" value="1" checked> ไปตามนัดรับยาเดิม </h2>
+                </li>
+                {%else%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_2" value="1"> ไปตามนัดรับยาเดิม </h2>
+                </li>
+                {%endif%}
+                {%if service_3 == 1%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_3" value="1" checked> ไปตามนัดเข้ากลุ่มบำบัด </h2>
+                </li>
+                {%else%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_3" value="1"> ไปตามนัดเข้ากลุ่มบำบัด </h2>
+                </li>
+                {%endif%}
+                {%if service_4 == 1%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_4" value="1" checked> ขอคำปรึกษาปัญหาครอบครัว  </h2>
+                </li>
+                {%else%}
+                <li class="list-group-item">
+                    <h2><input type="checkbox" name="service_4" value="1"> ขอคำปรึกษาปัญหาครอบครัว  </h2>
+                </li>
+                {%endif%}
+            </ul>
+            <div class="card-body">
+                <br>
+                <h2>วันที่</h2>
+                <input class="form-control" type="date" name="date" value="{{date}}"
+                       oninvalid="alert('กรุณาเลือกวันที่');" required><br>
+                <h2>เวลา</h2>
+                <input class="form-control" type="time" name="time" value="{{time}}"
+                       oninvalid="alert('กรุณาเลือกเวลา');" required><br>
+                <h2>หมายเหตุอื่นๆ</h2>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                          name="reminder">{{reminder}}</textarea><br>
+                <input id="userId" type="hidden" name="userId" value="">
+                <button type="submit" class="btn btn-success btn-lg btn-block">บันทึก</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/static/bootstrap/js/jquery.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="/static/bootstrap/js/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script>
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("userId").value = profile.userId;
+    }
+    async function main() {
+      await liff.init({
+        liffId: "1654982439-PGQy8pvw"
+      })
+      getUserProfile()
+    }
+    main()
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

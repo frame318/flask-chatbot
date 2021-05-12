@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
+</head>
+
+<body>
+  <form name="myform" action="/reminderindex" method="POST">
+    <input id="userId" type="hidden" name="userId" value="">
+ </form>
+  <script>
+  async function getUserProfile() {
+    const profile = await liff.getProfile()
+    document.getElementById("userId").value = profile.userId;
+    document.myform.submit();
+  }
+    async function main() {
+      await liff.init({
+        liffId: "1654982439-PGQy8pvw"
+      })
+      getUserProfile()
+    }
+    main()
+  </script>
+  
+
+</body>
+
+</html>

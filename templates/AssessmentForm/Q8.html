@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>แบบประเมิน</title>
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.4.0/sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  <style media="screen">
+    body {
+      font-family: 'Itim', cursive;
+
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container border">
+    <!-- Content here -->
+    <img src="/static/img_web/1.jpg" class="img-fluid" alt="Responsive image">
+    <form class="p-2" action="/checkQ8" method="POST">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+          <h1 class="display-5">แบบประเมินการฆ่าตัวตาย 8 คำถาม(8Q)</h1>
+        </div>
+
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>1. คิดอยากตาย หรือคิดว่าตายไปแล้วจะดีกว่า</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 1');" required> ไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q1" value="1"> มี </input></h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2>2. อยากทำร้ายตัวเอง หรือ ทำให้ตัวเองบาดเจ็บ</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 2');" required> ไม่มี </input> </h2>
+          </li>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q2" value="2"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2>3. ในช่วง 1 เดือนที่ผ่านมารวมวันนี้ คิดเกี่ยวกับการฆ่าตัวตาย</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="0" onchange="myFunctionQ30()" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 3');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q3" value="6" onchange="myFunctionQ31()"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div id="myFunctionQ3">
+
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2>4. ในช่วง 1 เดือนที่ผ่านมารวมวันนี้ มีแผนการที่จะฆ่าตัวตาย</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 4');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q4" value="8"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 5. ในช่วง 1 เดือนที่ผ่านมารวมวันนี้ ได้เตรียมการที่จะทำร้ายตัวเองหรือเตรียมการจะฆ่าตัวตายโดยตั้งใจว่าจะให้ตายจริงๆ </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 5');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q5" value="9"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 6. ได้ทำให้ตัวเองบาดเจ็บแต่ไม่ตั้งใจที่จะทำให้เสียชีวิต </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q6" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 6');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q6" value="4"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2>7. ได้พยายามฆ่าตัวตายโดยคาดหวัง/ตั้งใจที่จะให้ตาย</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q7" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 7');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q7" value="10"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+      <div class="card">
+        <div class="card-header">
+          <h2> 8. ตลาดชีวิตที่ผ่านมา ท่านเคยพยายามฆ่าตัวตาย </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q8" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 8');" required> ไม่มี </input> </h2>
+          <li class="list-group-item">
+            <h2> <input type="radio" name="q8" value="4"> มี </input> </h2>
+          </li>
+        </ul>
+      </div> <br>
+
+      <input id="userId" type="hidden" name="userId" value="">
+      <button type="submit" class="btn btn-primary">ส่งคำตอบ</button>
+      <!--  -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <h2> แบบประเมินความเสี่ยงฆ่าตัวตาย 8 คำถาม (8Q) </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <h2> • 0 คะแนน ไม่มีแนวโน้มฆ่าตัวตายในปัจจุบัน <br>
+              • 1 - 8 คะแนน มีแนวโน้มฆ่าตัวตายในปัจจุบัน ระดับน้อย <br>
+              • 9 - 16 คะแนน มีแนวโน้มฆ่าตัวตายในปัจจุบัน ระดับปานกลาง <br>
+              • >= 17 คะแนน มีแนวโน้มฆ่าตัวตายในปัจจุบัน ระดับรุนแรง <br>
+
+            </h2>
+          </li>
+        </ul>
+      </div> <br>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="/static/bootstrap/js/jquery.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="/static/bootstrap/js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script>
+    function myFunctionQ31() {
+      document.getElementById("myFunctionQ3").innerHTML =
+        '<div class="card"><div class="card-header"><h2>**3.1 ท่านสามารถควบคุบความอยากตายที่ท่านคิดอยู่นั้นได้หรือไม่ หรือ บอกได้ไหมว่าคงจะไม่ทำตามความคิดนั้นในขณะนี้**</h2></div><ul class="list-group list-group-flush"><li class="list-group-item"><h2> <input type="radio" name="q3q" value="0" oninvalid="alert("กรุณาเลือกคำตอบข้อที่ 3.1");" required> ได้</input> </h2><li class="list-group-item"><h2> <input type="radio" name="q3q" value="8"> ไม่ได้ </input> </h2></li></ul></div> <br>'
+
+    }
+
+    function myFunctionQ30() {
+      document.getElementById("myFunctionQ3").innerHTML = ''
+    }
+  </script>
+
+
+  <script>
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("userId").value = profile.userId;
+    }
+    async function main() {
+      await liff.init({
+        liffId: "1654982439-PGQy8pvw"
+      })
+      getUserProfile()
+    }
+    main()
+  </script>
+</body>
+
+</html>
